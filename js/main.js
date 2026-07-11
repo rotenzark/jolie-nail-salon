@@ -366,6 +366,32 @@
   }
 
   /* ============================================================
+     Intro: cinque unghie che si smaltano, poi via
+     ============================================================ */
+  var intro = document.getElementById('intro');
+  var root = document.documentElement;
+
+  function removeIntro() {
+    if (intro && intro.parentNode) intro.parentNode.removeChild(intro);
+    intro = null;
+  }
+
+  if (!intro || reduced) {
+    removeIntro();
+    root.classList.add('intro-done');
+  } else {
+    document.body.classList.add('intro-lock');
+    window.setTimeout(function () { intro.classList.add('is-painting'); }, 60);
+    window.setTimeout(function () {
+      intro.classList.add('is-done');
+      root.classList.add('intro-done');
+      document.body.classList.remove('intro-lock');
+      intro.addEventListener('transitionend', removeIntro, { once: true });
+      window.setTimeout(removeIntro, 900); // fallback se transitionend non arriva
+    }, 1950);
+  }
+
+  /* ============================================================
      Anno footer
      ============================================================ */
   var year = document.getElementById('year');

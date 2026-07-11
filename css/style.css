@@ -94,6 +94,61 @@ h3 { font-size: 1.35rem; }
 }
 .text-link:hover { color: var(--ink); }
 
+/* ---------- Intro: cinque unghie che si smaltano ---------- */
+.intro { display: none; }
+.js .intro {
+  display: flex; position: fixed; inset: 0; z-index: 300;
+  background: var(--porcelain);
+  align-items: center; justify-content: center;
+  transition: transform .65s cubic-bezier(.65, 0, .35, 1);
+}
+.js .intro.is-done { transform: translateY(-101%); }
+.intro-inner { text-align: center; }
+.intro-nails { display: flex; justify-content: center; align-items: flex-end; gap: 11px; height: 96px; }
+.intro-nail {
+  position: relative; width: 26px;
+  border: 1.5px solid var(--ink); border-radius: 999px;
+  overflow: hidden; background: var(--white);
+}
+.intro-nail:nth-child(1) { height: 54px; }
+.intro-nail:nth-child(2) { height: 72px; }
+.intro-nail:nth-child(3) { height: 84px; }
+.intro-nail:nth-child(4) { height: 74px; }
+.intro-nail:nth-child(5) { height: 56px; }
+.intro-nail i {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, var(--blush) 0%, var(--blush-deep) 100%);
+  transform: scaleY(0); transform-origin: bottom;
+}
+.is-painting .intro-nail i { animation: intro-fill .5s ease forwards; }
+.is-painting .intro-nail:nth-child(1) i { animation-delay: .1s; }
+.is-painting .intro-nail:nth-child(2) i { animation-delay: .28s; }
+.is-painting .intro-nail:nth-child(3) i { animation-delay: .46s; }
+.is-painting .intro-nail:nth-child(4) i { animation-delay: .64s; }
+.is-painting .intro-nail:nth-child(5) i { animation-delay: .82s; }
+.intro-word {
+  font-family: var(--font-script); font-size: 3rem; color: var(--ink);
+  line-height: 1.1; margin-top: 1.1rem; opacity: 0;
+}
+.intro-sub {
+  font-size: .68rem; letter-spacing: .42em; text-transform: uppercase;
+  color: var(--champagne-deep); margin-top: .2rem; opacity: 0;
+}
+.is-painting .intro-word { animation: intro-fade .7s ease .95s forwards; }
+.is-painting .intro-sub { animation: intro-fade .7s ease 1.15s forwards; }
+@keyframes intro-fill { to { transform: scaleY(1); } }
+@keyframes intro-fade { to { opacity: 1; } }
+body.intro-lock { overflow: hidden; }
+
+/* la hero entra quando l'intro se ne va */
+.js .hero-content { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
+.js.intro-done .hero-content { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .intro { display: none; }
+  .js .hero-content, .js.intro-done .hero-content { opacity: 1; transform: none; transition: none; }
+}
+
 /* ---------- Header ---------- */
 .header {
   position: fixed; inset: 0 0 auto 0; z-index: 100;
