@@ -34,7 +34,7 @@
       'salon.eyebrow': 'Il salone',
       'salon.title': 'in via Montegani 13',
       'salon.p1': "Dietro le due vetrine ad arco del quartiere Stadera c'è un salone bianco e nero curato in ogni dettaglio: lampadario, tende di pizzo, poltrone in bouclé e un muro di smalti che sembra una cartoleria dei colori.",
-      'salon.p2': 'Lina, Lea, Susy e Ting ti accolgono sette giorni su sette con precisione, gentilezza e un’igiene impeccabile — lo dicono le clienti, prima di noi. Lavoriamo con marchi professionali come CND Shellac e OPI.',
+      'salon.p2': 'Lina, Lea, Susy e Ting ti accolgono sette giorni su sette con precisione, gentilezza e un\'igiene impeccabile — lo dicono le clienti, prima di noi. Lavoriamo con marchi professionali come CND Shellac e OPI.',
       'salon.f1': 'Aperto 7 giorni su 7, orario continuato',
       'salon.f2': 'Prodotti professionali CND Shellac & OPI',
       'salon.f3': 'Pagamenti: contanti, carte di credito e debito',
